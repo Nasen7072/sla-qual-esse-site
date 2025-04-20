@@ -1,0 +1,165 @@
+/* Estilos base com acessibilidade */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 20px;
+}
+
+/* Contraste para acessibilidade */
+a, button {
+  color: var(--secondary-color);
+}
+
+a:hover, button:hover {
+  color: var(--accent-color);
+}
+
+/* Layout principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+}
+
+/* Cards de objetivos */
+.objective-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.objective-card:hover {
+  transform: translateY(-5px);
+}
+
+.objective-title {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+/* Barra de progresso */
+.progress-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+.progress-bar {
+  height: 20px;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+/* Formulários */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.high-contrast {
+  background-color: black !important;
+  color: white !important;
+}
+
+.high-contrast .objective-card {
+  background-color: #222 !important;
+  color: white !important;
+}
+
+/* Gráficos e matemática visual */
+.math-visualization {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .objective-card {
+    padding: 15px;
+  }
+}
+
+/* Animação para foco */
+:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
