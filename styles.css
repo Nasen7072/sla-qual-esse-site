@@ -1,165 +1,132 @@
-/* Estilos base com acessibilidade */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-  --accent-color: #e74c3c;
-  --light-color: #ecf0f1;
-  --dark-color: #2c3e50;
-  --success-color: #27ae60;
-  --warning-color: #f39c12;
-  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --cor-de-fundo: #1E1E1E;
+    --verde: #6FFF57;
+    --branco: #FFFFFF;
+    --botao-ativo: #3A375E;
+    --botao-inativo: rgba(58, 55, 94, 0.5);
+    --texto-fundo: rgba(58, 55, 94, 0.3);
 }
 
 body {
-  font-family: var(--font-main);
-  line-height: 1.6;
-  color: var(--dark-color);
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 20px;
+    background-color: var(--cor-de-fundo);
+    color: var(--branco);
+    font-family: 'Chakra Petch', sans-serif;
 }
 
-/* Contraste para acessibilidade */
-a, button {
-  color: var(--secondary-color);
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-a:hover, button:hover {
-  color: var(--accent-color);
+.titulo-principal {
+    text-align: left;
+    width: 100%;
+    font-size: 32px;
 }
 
-/* Layout principal */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+.titulo-principal span {
+    color: var(--verde);
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: 8px;
+
+.botao {
+    font-family: 'Chakra Petch', sans-serif;
+    background-color: var(--botao-inativo);
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    font-size: 18px;
+    align-items: center;
+    width: 100%;
+    border-bottom: 4px solid var(--botao-ativo);
+    border-left: 2px solid var(--botao-ativo);
+    border-right: 2px solid var(--botao-ativo);
+    border-top: none;
 }
 
-/* Cards de objetivos */
-.objective-card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
+.botao:first-child {
+    border-radius: 40px 40px 0 0;
 }
 
-.objective-card:hover {
-  transform: translateY(-5px);
+.botoes {
+    display: block;
 }
 
-.objective-title {
-  color: var(--primary-color);
-  margin-top: 0;
+.botao.ativo {
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
 }
 
-/* Barra de progresso */
-.progress-container {
-  width: 100%;
-  background-color: #e0e0e0;
-  border-radius: 4px;
-  margin: 15px 0;
+.abas-textos {
+    background-color: var(--texto-fundo);
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
 }
 
-.progress-bar {
-  height: 20px;
-  border-radius: 4px;
-  background-color: var(--secondary-color);
-  width: 0%;
-  transition: width 0.5s ease;
+.aba-conteudo.ativo {
+    display: block;
 }
 
-/* Formulários */
-.form-group {
-  margin-bottom: 15px;
+.aba-conteudo {
+    display: none;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+.aba-conteudo-titulo-principal {
+    font-size: 28px;
+    text-align: center;
 }
 
-input[type="text"],
-input[type="number"],
-textarea,
-select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
+.aba-conteudo-titulo-secundario {
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
 }
 
-button {
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
+.contador {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-button:hover {
-  background-color: var(--accent-color);
+.contador-digito {
+    padding: 0 16px;
+    text-align: center;
+    min-width: 100px;
 }
 
-/* Acessibilidade */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+.contador-digito-numero {
+    font-size: 80px;
+    margin: 0;
+
 }
 
-.high-contrast {
-  background-color: black !important;
-  color: white !important;
+.contador-digito-texto {
+    color: var(--verde);
+    font-size: 20px;
+    margin: 0;
+
 }
 
-.high-contrast .objective-card {
-  background-color: #222 !important;
-  color: white !important;
-}
+@media screen and (min-width: 768px) {
+    .botoes {
+        display: flex;
+    }
 
-/* Gráficos e matemática visual */
-.math-visualization {
-  padding: 15px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  margin-top: 15px;
-}
+    .botao:first-child {
+        border-radius: 40px 0 0 0;
+    }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
-  
-  .objective-card {
-    padding: 15px;
-  }
-}
-
-/* Animação para foco */
-:focus {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
+    .botao:last-child {
+        border-radius: 0 40px 0 0;
+    }
 }
